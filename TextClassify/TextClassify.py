@@ -10,6 +10,6 @@ class TextClassify:
         pass
     def text_classify(self, file, bow_model, classify_model):
         feature = bow_model.trainsorm_single_file(file)
+        feature = feature.reshape(1,-1)
         pred = classify_model.predict(feature)
         return pred
-        
